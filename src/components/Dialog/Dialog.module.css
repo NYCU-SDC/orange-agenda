@@ -1,0 +1,84 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: var(--z-overlay);
+}
+
+.content {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 450px;
+  max-height: 85vh;
+  padding: var(--spacing-xl);
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: var(--z-modal);
+}
+
+.content:focus {
+  outline: none;
+}
+
+.title {
+  margin: 0;
+  font-weight: var(--font-semibold);
+  color: var(--color-black);
+  font-size: var(--text-xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.description {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-gray-600);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-600);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.close:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-black);
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

@@ -1,0 +1,34 @@
+.root {
+  all: unset;
+  background-color: var(--color-white);
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-gray-300);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.root:hover {
+  border-color: var(--color-orange);
+}
+
+.root[data-state='checked'] {
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.indicator {
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
