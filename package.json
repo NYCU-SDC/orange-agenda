@@ -69,7 +69,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nycu-sdc/orange-agenda.git"
+    "url": "git+https://github.com/nycu-sdc/orange-agenda.git"
   },
   "bugs": {
     "url": "https://github.com/nycu-sdc/orange-agenda/issues"
