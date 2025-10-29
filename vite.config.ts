@@ -24,19 +24,14 @@ export default defineConfig({
     },
     rollupOptions: {
       // 告訴 Rollup 不要打包這些依賴
-      external: [
-        'react',
-        'react-dom',
-        /^@radix-ui\//,
-      ],
+      external: ['react', 'react-dom', /^@radix-ui\//],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        // 保證所有 CSS 打包成單一 index.css
         assetFileNames: assetInfo => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) return 'index.css';
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) return 'style.css';
           return 'assets/[name]-[hash][extname]';
         },
       },
