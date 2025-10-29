@@ -1,0 +1,13 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{R as i,I as s}from"./index-DGGr4anV.js";import"./iframe-Cm_yLx7i.js";import"./preload-helper-PPVm8Dsz.js";import"./index-Cd1yDu3U.js";import"./index-BAarJrQd.js";import"./index-CzP2KmRN.js";import"./index-B27zZO9V.js";import"./index-COGdVLVB.js";import"./index-Dc_FVRD7.js";import"./index-BS0RcIVa.js";import"./index-C-HZSWkX.js";import"./index-YabXLLkV.js";import"./index-BFMF1_Yi.js";import"./index-BO4e6RB6.js";import"./index-Dd_MV1wL.js";import"./index-b20dIzpu.js";const g="_root_1b8kv_1",m="_item_1b8kv_8",n={root:g,item:m},r=({children:u,...t})=>e.jsx(i,{className:n.root,...t.type==="single"?{type:"single",value:t.value,defaultValue:t.defaultValue,onValueChange:t.onValueChange}:{type:"multiple",value:t.value,defaultValue:t.defaultValue,onValueChange:t.onValueChange},children:u}),o=({children:u,...t})=>e.jsx(s,{className:n.item,...t,children:u});r.displayName="ToggleGroup";o.displayName="ToggleGroupItem";r.__docgenInfo={description:"",methods:[],displayName:"ToggleGroup"};o.__docgenInfo={description:"",methods:[],displayName:"ToggleGroupItem",props:{value:{required:!0,tsType:{name:"string"},description:""},children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""}}};const b={title:"Components/ToggleGroup",component:r,tags:["autodocs"]},l={render:()=>e.jsxs(r,{type:"single",defaultValue:"center",children:[e.jsx(o,{value:"left",children:"Left"}),e.jsx(o,{value:"center",children:"Center"}),e.jsx(o,{value:"right",children:"Right"})]})},a={render:()=>e.jsxs(r,{type:"multiple",defaultValue:["bold"],children:[e.jsx(o,{value:"bold",children:"B"}),e.jsx(o,{value:"italic",children:"I"}),e.jsx(o,{value:"underline",children:"U"})]})};l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  render: () => <ToggleGroup type="single" defaultValue="center">
+      <ToggleGroupItem value="left">Left</ToggleGroupItem>
+      <ToggleGroupItem value="center">Center</ToggleGroupItem>
+      <ToggleGroupItem value="right">Right</ToggleGroupItem>
+    </ToggleGroup>
+}`,...l.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  render: () => <ToggleGroup type="multiple" defaultValue={['bold']}>
+      <ToggleGroupItem value="bold">B</ToggleGroupItem>
+      <ToggleGroupItem value="italic">I</ToggleGroupItem>
+      <ToggleGroupItem value="underline">U</ToggleGroupItem>
+    </ToggleGroup>
+}`,...a.parameters?.docs?.source}}};const S=["Single","Multiple"];export{a as Multiple,l as Single,S as __namedExportsOrder,b as default};
