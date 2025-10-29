@@ -1,6 +1,6 @@
 {
   "name": "@nycu-sdc/orange-agenda",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A complete React component library built with Radix UI primitives by NYCU Software Development Club.",
   "type": "module",
   "main": "dist/index.js",
@@ -67,17 +67,33 @@
   ],
   "author": "NYCU Software Development Club",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nycu-sdc/orange-agenda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nycu-sdc/orange-agenda/issues"
+  },
+  "homepage": "https://nycu-sdc.github.io/orange-agenda/",
   "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd",
   "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.2",
     "@eslint/js": "^9.38.0",
-    "@storybook/addon-docs": "^10.0.0",
-    "@storybook/react-vite": "^10.0.0",
+    "@storybook/addon-a11y": "^10.0.1",
+    "@storybook/addon-docs": "^10.0.1",
+    "@storybook/addon-onboarding": "^10.0.1",
+    "@storybook/addon-vitest": "^10.0.1",
+    "@storybook/manager-api": "^8.6.14",
+    "@storybook/react-vite": "^10.0.1",
+    "@storybook/theming": "^8.6.14",
     "@types/node": "^24.9.2",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
     "@vitejs/plugin-react": "^5.1.0",
+    "@vitest/browser-playwright": "^4.0.5",
+    "@vitest/coverage-v8": "^4.0.5",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
@@ -85,13 +101,15 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "eslint-plugin-storybook": "^10.0.0",
     "globals": "^16.4.0",
+    "playwright": "^1.56.1",
     "prettier": "^3.6.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "storybook": "^10.0.0",
+    "storybook": "^10.0.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.2",
     "vite": "^7.1.12",
-    "vite-plugin-dts": "^4.5.4"
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.0.5"
   }
 }
