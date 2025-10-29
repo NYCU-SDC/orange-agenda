@@ -6,7 +6,7 @@ export interface ToggleGroupProps {
   type: 'single' | 'multiple';
   value?: string | string[];
   defaultValue?: string | string[];
-  onValueChange?: (value: any) => void;
+  onValueChange?: (value: string | string[]) => void;
   children: React.ReactNode;
 }
 
