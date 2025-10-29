@@ -1,0 +1,1 @@
+._content_q6rph_1{overflow:hidden}._content_q6rph_1[data-state=open]{animation:_slideDown_q6rph_1 .2s ease-out}._content_q6rph_1[data-state=closed]{animation:_slideUp_q6rph_1 .2s ease-out}@keyframes _slideDown_q6rph_1{0%{height:0}to{height:var(--radix-collapsible-content-height)}}@keyframes _slideUp_q6rph_1{0%{height:var(--radix-collapsible-content-height)}to{height:0}}
