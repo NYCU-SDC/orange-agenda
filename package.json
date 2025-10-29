@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "description": "A complete React component library built with Radix UI primitives by NYCU Software Development Club.",
   "type": "module",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.umd.js"
     },
     "./styles": "./dist/style.css"
   },
@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -27,10 +27,6 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
     "prepublishOnly": "pnpm build"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -61,6 +57,17 @@
     "@radix-ui/react-toolbar": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8"
   },
+  "keywords": [
+    "react",
+    "component-library",
+    "ui",
+    "radix-ui",
+    "typescript",
+    "vite"
+  ],
+  "author": "NYCU Software Development Club",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd",
   "devDependencies": {
     "@eslint/js": "^9.38.0",
     "@storybook/addon-docs": "^10.0.0",
@@ -84,17 +91,7 @@
     "storybook": "^10.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.2",
-    "vite": "^7.1.12"
-  },
-  "keywords": [
-    "react",
-    "component-library",
-    "ui",
-    "radix-ui",
-    "typescript",
-    "vite"
-  ],
-  "author": "NYCU Software Development Club",
-  "license": "Apache-2.0",
-  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4"
+  }
 }

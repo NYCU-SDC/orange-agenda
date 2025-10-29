@@ -2,15 +2,28 @@ import React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import styles from './Accordion.module.css';
 
-export interface AccordionProps {
-  type?: 'single' | 'multiple';
-  defaultValue?: string | string[];
+type AccordionSingleProps = {
+  type?: 'single';
+  defaultValue?: string;
   children: React.ReactNode;
-}
+};
+
+type AccordionMultipleProps = {
+  type: 'multiple';
+  defaultValue?: string[];
+  children: React.ReactNode;
+};
+
+export type AccordionProps = AccordionSingleProps | AccordionMultipleProps;
 
 export const Accordion: React.FC<AccordionProps> = ({ children, type = 'single', ...props }) => {
   return (
-    <AccordionPrimitive.Root className={styles.root} type={type} {...props}>
+    <AccordionPrimitive.Root
+      className={styles.root}
+      {...(type === 'single'
+        ? { type: 'single' as const, defaultValue: props.defaultValue as string | undefined }
+        : { type: 'multiple' as const, defaultValue: props.defaultValue as string[] | undefined })}
+    >
       {children}
     </AccordionPrimitive.Root>
   );
