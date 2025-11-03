@@ -14,14 +14,22 @@ A complete React component library built with **Radix UI primitives**, styled wi
 
 ## 📦 Installation
 
+You can install the library via `pnpm`:
+
 ```bash
-pnpm add @the-orange-agenda/ui
+pnpm add @nycu-sdc/orange-agenda
 ```
 
-### Peer Dependencies
+> remember to also install peer dependencies:
+>
+> ```bash
+> pnpm add react react-dom
+> ```
+
+Or create a SDC frontend template project that includes the peer dependencies:
 
 ```bash
-pnpm add react react-dom
+pnpm create @nycu-sdc/orange-agenda/template my-app
 ```
 
 ## 🚀 Quick Start
@@ -29,7 +37,7 @@ pnpm add react react-dom
 ### Import Components
 
 ```tsx
-import { Button, Dialog, DialogTrigger, DialogContent } from '@the-orange-agenda/ui';
+import { Button, Dialog, DialogTrigger, DialogContent } from '@nycu-sdc/orange-agenda';
 
 function App() {
   return (
@@ -48,7 +56,7 @@ function App() {
 ### Import Styles
 
 ```tsx
-import '@the-orange-agenda/ui/styles';
+import '@nycu-sdc/orange-agenda/styles';
 ```
 
 ## 🧩 Components
@@ -56,7 +64,7 @@ import '@the-orange-agenda/ui/styles';
 ### Button
 
 ```tsx
-import { Button } from '@the-orange-agenda/ui';
+import { Button } from '@nycu-sdc/orange-agenda';
 
 <Button variant="default">Click me</Button>
 <Button variant="outline">Outline</Button>
@@ -66,7 +74,7 @@ import { Button } from '@the-orange-agenda/ui';
 ### Dialog
 
 ```tsx
-import { Dialog, DialogTrigger, DialogContent } from '@the-orange-agenda/ui';
+import { Dialog, DialogTrigger, DialogContent } from '@nycu-sdc/orange-agenda';
 
 <Dialog>
   <DialogTrigger asChild>
@@ -75,13 +83,13 @@ import { Dialog, DialogTrigger, DialogContent } from '@the-orange-agenda/ui';
   <DialogContent title="Title" description="Description">
     Content
   </DialogContent>
-</Dialog>
+</Dialog>;
 ```
 
 ### Tabs
 
 ```tsx
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@the-orange-agenda/ui';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@nycu-sdc/orange-agenda';
 
 <Tabs defaultValue="tab1">
   <TabsList>
@@ -90,54 +98,54 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@the-orange-agenda/ui'
   </TabsList>
   <TabsContent value="tab1">Content 1</TabsContent>
   <TabsContent value="tab2">Content 2</TabsContent>
-</Tabs>
+</Tabs>;
 ```
 
 ### Switch
 
 ```tsx
-import { Switch } from '@the-orange-agenda/ui';
+import { Switch } from '@nycu-sdc/orange-agenda';
 
-<Switch checked={true} onCheckedChange={(checked) => console.log(checked)} />
+<Switch checked={true} onCheckedChange={checked => console.log(checked)} />;
 ```
 
 ### Tooltip
 
 ```tsx
-import { Tooltip, TooltipProvider } from '@the-orange-agenda/ui';
+import { Tooltip, TooltipProvider } from '@nycu-sdc/orange-agenda';
 
 <TooltipProvider>
   <Tooltip content="Helpful text">
     <Button>Hover me</Button>
   </Tooltip>
-</TooltipProvider>
+</TooltipProvider>;
 ```
 
 ### Checkbox
 
 ```tsx
-import { Checkbox } from '@the-orange-agenda/ui';
+import { Checkbox } from '@nycu-sdc/orange-agenda';
 
-<Checkbox checked={true} onCheckedChange={(checked) => console.log(checked)} />
+<Checkbox checked={true} onCheckedChange={checked => console.log(checked)} />;
 ```
 
 ### Slider
 
 ```tsx
-import { Slider } from '@the-orange-agenda/ui';
+import { Slider } from '@nycu-sdc/orange-agenda';
 
-<Slider defaultValue={[50]} min={0} max={100} step={1} />
+<Slider defaultValue={[50]} min={0} max={100} step={1} />;
 ```
 
 ### RadioGroup
 
 ```tsx
-import { RadioGroup, RadioGroupItem } from '@the-orange-agenda/ui';
+import { RadioGroup, RadioGroupItem } from '@nycu-sdc/orange-agenda';
 
 <RadioGroup defaultValue="option1">
   <RadioGroupItem value="option1" id="r1" />
   <RadioGroupItem value="option2" id="r2" />
-</RadioGroup>
+</RadioGroup>;
 ```
 
 ### DropdownMenu
@@ -148,7 +156,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from '@the-orange-agenda/ui';
+} from '@nycu-sdc/orange-agenda';
 
 <DropdownMenu>
   <DropdownMenuTrigger asChild>
@@ -158,66 +166,71 @@ import {
     <DropdownMenuItem>Item 1</DropdownMenuItem>
     <DropdownMenuItem>Item 2</DropdownMenuItem>
   </DropdownMenuContent>
-</DropdownMenu>
+</DropdownMenu>;
 ```
 
 ### Select
 
 ```tsx
-import { Select, SelectItem } from '@the-orange-agenda/ui';
+import { Select, SelectItem } from '@nycu-sdc/orange-agenda';
 
 <Select placeholder="Choose...">
   <SelectItem value="1">Option 1</SelectItem>
   <SelectItem value="2">Option 2</SelectItem>
-</Select>
+</Select>;
 ```
 
 ### Popover
 
 ```tsx
-import { Popover, PopoverTrigger, PopoverContent } from '@the-orange-agenda/ui';
+import { Popover, PopoverTrigger, PopoverContent } from '@nycu-sdc/orange-agenda';
 
 <Popover>
   <PopoverTrigger asChild>
     <Button>Open</Button>
   </PopoverTrigger>
   <PopoverContent>Content</PopoverContent>
-</Popover>
+</Popover>;
 ```
 
 ### Accordion
 
 ```tsx
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@the-orange-agenda/ui';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@nycu-sdc/orange-agenda';
 
 <Accordion defaultValue="item-1">
   <AccordionItem value="item-1">
     <AccordionTrigger>Question?</AccordionTrigger>
     <AccordionContent>Answer!</AccordionContent>
   </AccordionItem>
-</Accordion>
+</Accordion>;
 ```
 
 ### HoverCard
 
 ```tsx
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@the-orange-agenda/ui';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@nycu-sdc/orange-agenda';
 
 <HoverCard>
   <HoverCardTrigger>Hover me</HoverCardTrigger>
   <HoverCardContent>Additional info</HoverCardContent>
-</HoverCard>
+</HoverCard>;
 ```
 
 ### Toast
 
 ```tsx
-import { Toast, ToastProvider, ToastViewport } from '@the-orange-agenda/ui';
+import { Toast, ToastProvider, ToastViewport } from '@nycu-sdc/orange-agenda';
 
 <ToastProvider>
   <Toast title="Success!" description="Operation completed" />
   <ToastViewport />
-</ToastProvider>
+</ToastProvider>;
 ```
 
 ## 🎨 Theming
@@ -267,7 +280,7 @@ pnpm format
 ## 📁 Project Structure
 
 ```
-the-orange-agenda/
+nycu-sdc/orange-agenda/
 ├── src/
 │   ├── components/      # All component implementations
 │   ├── styles/          # Global styles and CSS variables
@@ -288,6 +301,7 @@ Apache-2.0 © NYCU SDC
 ## 🙏 Credits
 
 Built with:
+
 - [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components
 - [Vite](https://vitejs.dev/) - Next generation frontend tooling
 - [Storybook](https://storybook.js.org/) - UI component explorer

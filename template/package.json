@@ -1,0 +1,8 @@
+{
+  "name": "create-agenda",
+  "version": "1.0.0",
+  "bin": {
+    "create-agenda": "index.js"
+  },
+  "type": "module"
+}
