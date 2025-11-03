@@ -1,6 +1,6 @@
 {
   "name": "@nycu-sdc/create-orange-agenda",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A feature-driven React application template using The Orange Agenda component library.",
   "bin": {
     "create-agenda": "index.js"

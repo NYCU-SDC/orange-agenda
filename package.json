@@ -1,6 +1,6 @@
 {
   "name": "@nycu-sdc/orange-agenda",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "A complete React component library built with Radix UI primitives by NYCU Software Development Club.",
   "type": "module",
   "main": "dist/index.js",
