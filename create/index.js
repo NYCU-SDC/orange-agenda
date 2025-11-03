@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import readline from "readline";
+import { spawn } from "child_process";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -104,13 +105,17 @@ async function askProjectPath() {
 
 // 方框輸出
 function printBox(lines, color = orangeText) {
-  const width = Math.max(...lines.map((l) => l.length)) + 4;
-  const top = `┌${"─".repeat(width - 2)}┐`;
-  const bottom = `└${"─".repeat(width - 2)}┘`;
+  // Add extra slack to account for emoji/wide chars and terminal differences.
+  const maxLen = Math.max(...lines.map((l) => l.length));
+  const width = maxLen + 6; // a little wider to avoid overflow
+  const innerWidth = width - 2;
+  const top = `┌${"─".repeat(Math.max(0, innerWidth))}┐`;
+  const bottom = `└${"─".repeat(Math.max(0, innerWidth))}┘`;
   console.log(color + top + reset);
   for (const line of lines) {
-    const padding = width - 2 - line.length;
-    console.log(color + "│ " + reset + line + " ".repeat(padding - 1) + color + "│" + reset);
+    // compute padding and clamp to at least one space so repeat() never gets negative
+    const padding = Math.max(1, innerWidth - line.length - 1);
+    console.log(color + "│ " + reset + line + " ".repeat(padding) + color + "│" + reset);
   }
   console.log(color + bottom + reset);
 }
@@ -159,3 +164,38 @@ printBox([
   "   pnpm i",
   "   pnpm dev",
 ]);
+
+// Offer to run pnpm install and pnpm dev for the user
+const doHelp = await askKeyYN(
+  `${grayText}${spaces(LABEL_WIDTH - 2)}${yellowBg}${blackText} Help ${reset}` +
+    `${grayText}${spaces(GAP_WIDTH)}${whiteText}Do you want me to run 'pnpm i' and then 'pnpm dev' for you? (y/N): ${reset}`
+);
+console.log();
+if (doHelp) {
+  // helper to run a command and wait
+  async function runCmd(cmd, args, cwd) {
+    return new Promise((resolve, reject) => {
+      const p = spawn(cmd, args, { cwd, stdio: "inherit" });
+      p.on("error", (err) => reject(err));
+      p.on("exit", (code) => {
+        if (code === 0) resolve(code);
+        else reject(new Error(`${cmd} ${args.join(" ")} exited with code ${code}`));
+      });
+    });
+  }
+
+  try {
+    console.log(`${grayText}Installing dependencies...${reset}`);
+    await runCmd("pnpm", ["i"], targetDir);
+    console.log(`${grayText}Starting dev server... (press Ctrl+C to stop)${reset}`);
+    // start dev and attach stdio (will run until user stops)
+    await runCmd("pnpm", ["dev"], targetDir);
+  } catch (err) {
+    console.error(`\n⚠️  Failed to run command: ${err.message}`);
+    console.log("You can run the steps manually:");
+    console.log(`  cd ${projectName}`);
+    console.log("  pnpm i");
+    console.log("  pnpm dev");
+    process.exit(1);
+  }
+}
