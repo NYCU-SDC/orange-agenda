@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const projectName = process.argv[2];
 if (!projectName) {
-  console.error('❌ 請輸入專案名稱，例如：pnpm create my-architecture my-app');
+  console.error('❌ 請輸入專案名稱，例如：pnpm create @nycu-sdc/create-agenda my-app');
   process.exit(1);
 }
 

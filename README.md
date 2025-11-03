@@ -29,7 +29,7 @@ pnpm add @nycu-sdc/orange-agenda
 Or create a SDC frontend template project that includes the peer dependencies:
 
 ```bash
-pnpm create @nycu-sdc/orange-agenda/template my-app
+pnpm create @nycu-sdc/orange-agenda/create my-app
 ```
 
 ## 🚀 Quick Start
