@@ -1,11 +1,13 @@
 export default {
-  printWidth: 100,
+  printWidth: 200,
   tabWidth: 2,
-  useTabs: false,
+  useTabs: true,
   semi: true,
-  singleQuote: true,
-  trailingComma: 'all',
+  singleQuote: false,
+  trailingComma: 'none',
   bracketSpacing: true,
   arrowParens: 'avoid',
-  endOfLine: 'auto',
+  requirePragma: false,
+  insertPragma: false,
+  proseWrap: 'never',
 };

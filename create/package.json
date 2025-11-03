@@ -1,9 +1,20 @@
 {
   "name": "create-agenda",
   "version": "1.0.0",
+  "description": "A feature-driven React application template using The Orange Agenda component library.",
   "bin": {
     "create-agenda": "index.js"
   },
+  "files": [
+    "index.js",
+    "template/"
+  ],
+  "keywords": [
+    "pnpm",
+    "create",
+    "cli",
+    "scaffold"
+  ],
   "type": "module",
   "author": "NYCU Software Development Club",
   "license": "Apache-2.0",
